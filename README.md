@@ -1,16 +1,9 @@
-# flutterproj
+# Cook With Us - A Recipe App 
 
-A new Flutter project.
+Cook With Us is a mobile application developed using Flutter, that allows users to view recipes and add their own recipes. 
 
-## Getting Started
+Technologies Used : 
 
-This project is a starting point for a Flutter application.
+Flutter: The app is developed using the Flutter framework, which allows for cross-platform compatibility and fast development.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Firebase: The app uses Firebase as a backend to store and retrieve recipe data. Firebase provides a real-time database and storage for the app.
