@@ -1,93 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:flutterproj/models/recipe.api.dart';
-import 'package:flutterproj/views/widgets/recipe_card.dart';
+import 'package:flutterproj/models/newapi.dart';
+import 'package:flutterproj/views/widgets/news_card.dart';
 
-import 'models/recipe.dart';
-
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
-
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  late List<Recipe> _recipes;
-
-  bool _isLoading = true;
-
-  @override
-  void initState() {
-    super.initState();
-    getRecipes();
-  }
-
-  Future<void> getRecipes() async {
-    _recipes = await RecipeApi.getRecipe();
-    setState(() {
-      _isLoading = false;
-    });
-  }
+class ProfilePageScreen extends StatelessWidget {
+  const ProfilePageScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _isLoading
-          ? Center(child: CircularProgressIndicator())
-          : ListView.builder(
-        itemCount: _recipes.length,
-        itemBuilder: (context, index) {
-          return RecipeCard(
-              title: _recipes[index].name,
-              cookTime: _recipes[index].totalTime,
-              rating: _recipes[index].rating.toString(),
-              thumbnailUrl: _recipes[index].images);
-        },
-      )
-    );
-  }
-}
-
-class InfoPage extends StatelessWidget {
-  const InfoPage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Text("Info Data"),
-      ),
-    );
-  }
-}
-
-class ProfilePage extends StatelessWidget {
-  const ProfilePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Profile"),
-        centerTitle: true,
-        backgroundColor: Colors.black54,
-      ),
       body: SingleChildScrollView(
         child: Container(
-          padding: const EdgeInsets.fromLTRB(100,50,100,50),
+          padding: const EdgeInsets.fromLTRB(100, 50, 100, 50),
           child: Column(
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 110,
                 width: 110,
                 child: CircleAvatar(
                   backgroundImage: AssetImage('assets/images/profile-img.png'),
                 ),
               ),
-              Divider(
+              const Divider(
                 height: 30.0,
               ),
-              Text(
+              const Text(
                 'NAME',
                 style: TextStyle(
                   color: Colors.black,
@@ -99,17 +35,16 @@ class ProfilePage extends StatelessWidget {
                 child: ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
-                      padding: EdgeInsets.all(10.0),
-                      backgroundColor:Colors.black54,
+                      padding: const EdgeInsets.all(10.0),
+                      backgroundColor: Colors.black54,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(50),
-                      )
-
-                  ), child: const Text("Sanika Surve"),
+                      )),
+                  child: const Text("Gauri Malpani"),
                 ),
               ),
-              SizedBox(height: 15),
-              Text(
+              const SizedBox(height: 15),
+              const Text(
                 'PHONE',
                 style: TextStyle(
                   color: Colors.black,
@@ -121,17 +56,16 @@ class ProfilePage extends StatelessWidget {
                 child: ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
-                      padding: EdgeInsets.all(10.0),
+                      padding: const EdgeInsets.all(10.0),
                       backgroundColor: Colors.black54,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(50),
-                      )
-
-                  ), child: const Text("1234567890"),
+                      )),
+                  child: const Text("7498472344"),
                 ),
               ),
-              SizedBox(height: 15),
-              Text(
+              const SizedBox(height: 15),
+              const Text(
                 'EMAIL',
                 style: TextStyle(
                   color: Colors.black,
@@ -143,17 +77,16 @@ class ProfilePage extends StatelessWidget {
                 child: ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
-                      padding: EdgeInsets.all(10.0),
+                      padding: const EdgeInsets.all(10.0),
                       backgroundColor: Colors.black54,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(50),
-                      )
-
-                  ), child: const Text("abc@gmail.com"),
+                      )),
+                  child: const Text("malpanigauri@gmail.com"),
                 ),
               ),
-              SizedBox(height: 15),
-              Text(
+              const SizedBox(height: 15),
+              const Text(
                 'ADDRESS',
                 style: TextStyle(
                   color: Colors.black,
@@ -165,21 +98,17 @@ class ProfilePage extends StatelessWidget {
                 child: ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
-                      padding: EdgeInsets.all(10.0),
+                      padding: const EdgeInsets.all(10.0),
                       backgroundColor: Colors.black54,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(50),
-                      )
-
-                  ), child: const Text("Mumbai"),
+                      )),
+                  child: const Text("Mumbai"),
                 ),
               ),
             ],
           ),
         ),
-
-
-
       ),
     );
   }
